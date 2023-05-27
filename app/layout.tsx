@@ -1,11 +1,7 @@
-"use client"
 
-import { QueryClient, QueryClientProvider } from 'react-query';
 import Footer from './components/Footer';
 import './globals.css'
 import { poppins } from './theme/font';
-
-const queryClient = new QueryClient()
 
 export const metadata = {
   title: 'Pokédex',
@@ -20,9 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={`bg-white text-slate-800 ${poppins.className} bg-no-repeat bg-[length:200px_200px] bg-pokeball bg-right-top-negative`}>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        
+          {children}        
         <Footer />
       </body>
     </html>

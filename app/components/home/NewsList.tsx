@@ -1,5 +1,6 @@
 "use client"
-import { useQuery } from "react-query";
+
+import { useQuery } from 'react-query';
 import NewsItem from "./NewsItem";
 import axios from "axios";
 import Loading from "../Loading";

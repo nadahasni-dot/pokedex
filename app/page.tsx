@@ -1,7 +1,12 @@
+"use client"
+
+import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchBar from './components/home/SearchBar'
 import MenuItem from './components/home/MenuItem'
 import Link from 'next/link'
 import NewsList from './components/home/NewsList'
+
+const queryClient = new QueryClient()
 
 export default function Home() {
   return (
@@ -26,7 +31,9 @@ export default function Home() {
         <h2 className='text-xl font-bold md:text-2xl'>Pokémon News</h2>
         <Link href="/news" className='px-4 py-2 text-sm text-blue-500 transition md:text-base hover:bg-blue-100 rounded-xl'>View All</Link>
       </div>
-      <NewsList />
+      <QueryClientProvider client={queryClient}>
+        <NewsList />
+      </QueryClientProvider>
     </div>
   )
 }

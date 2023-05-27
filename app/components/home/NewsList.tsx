@@ -10,7 +10,7 @@ export default function NewsList() {
     return axios.get('https://newsapi.org/v2/everything', {
       params: {
         q: 'Pokemon',
-        sortBy: 'popularity ',
+        sortBy: 'popularity',
         apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
       }
     })
